@@ -1,0 +1,127 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  outline: none;
+}
+body {
+  background-color: rgb(204, 181, 240);
+}
+h1 {
+  text-align: center;
+  margin-top: 5px;
+  color: #6750a1;
+}
+.wrapper {
+  width: 90%;
+  max-width: 25em;
+  background-color: #ffffff;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  padding: 1em;
+  border-radius: 0.8em;
+}
+.app-details {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.app-icon {
+  width: 9.37em;
+  align-content: center;
+}
+.app-title {
+  font-size: 1.6em;
+  text-transform: uppercase;
+  /* margin-bottom: 1em; */
+}
+label {
+  display: block;
+  font-weight: 600;
+  /* margin-bottom: 1rem; */
+}
+input#amount {
+  font-weight: 400;
+  font-size: 1.2em;
+  display: block;
+  width: 100%;
+  text-align: center;
+  border-bottom: 2px solid #23002c;
+  color: #17061f;
+  margin-bottom: 1em;
+  padding: 0.5em;
+}
+#amount {
+  background-color: #fffdfd;
+  border-radius: 30px;
+}
+input#amount:focus {
+  color: #937ecc;
+  border-color: #937ecc;
+}
+.dropdowns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+}
+select {
+  width: 100%;
+  padding: 0.6em;
+  font-size: 1em;
+  border-radius: 0.2em;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("arrow-down.svg");
+  background-repeat: no-repeat;
+  background-position: right 15px top 50%, center;
+  background-size: 20px 20px;
+  background-color: #937ecc;
+  color: #ffffff;
+  border-radius: 10px;
+}
+select option {
+  background-color: #ffffff;
+  color: #02002c;
+}
+button {
+  font-size: 1.2rem;
+  width: 100%;
+  background-color: #937ecc;
+  padding: 0.5em 0;
+  margin-top: 0.8em;
+  border-radius: 0.3em;
+  color: #ffffff;
+  font-weight: 500;
+  border-radius: 30px;
+}
+#result {
+  font-size: 1.2em;
+  text-align: center;
+  margin-top: 0.8em;
+  color: #02002c;
+  background-color: #e5dbff;
+  padding: 0.8em 0;
+  border-radius: 20px;
+}
+
+footer {
+  height: 25px;
+  width: 100%;
+  font-size: 10px;
+  position: fixed;
+  background-color: #e5dbff;
+  border-top-left-radius: 0.7rem;
+  border-top-right-radius: 0.7rem;
+  color: #17061f;
+  bottom: 0;
+  text-align: center;
+  padding-top: 3px;
+  /* text-decoration: none; */
+  border-top: 1px solid #ffffff;
+}
