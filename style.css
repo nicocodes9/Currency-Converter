@@ -2,22 +2,91 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+:root {
+  --background-color-light: rgb(204, 181, 240);
+  --wrapper-bg-light: #ffffff;
+  --text-color-light: #02002c;
+  --input-bg-light: #fffdfd;
+  --input-border-light: #23002c;
+  --input-focus-color-light: #937ecc;
+  --select-bg-light: #937ecc;
+  --select-text-light: #ffffff;
+  --button-bg-light: #937ecc;
+  --button-text-light: #ffffff;
+  --result-bg-light: #e5dbff;
+  --footer-bg-light: #e5dbff;
+  --footer-text-light: #17061f;
+  --title-color-light: #6750a1;
+
+  --background-color-dark: #121212;
+  --wrapper-bg-dark: #1e1e1e;
+  --text-color-dark: #e0e0e0;
+  --input-bg-dark: #2c2c2c;
+  --input-border-dark: #bb86fc;
+  --input-focus-color-dark: #bb86fc;
+  --select-bg-dark: #3700b3;
+  --select-text-dark: #e0e0e0;
+  --button-bg-dark: #bb86fc;
+  --button-text-dark: #121212;
+  --result-bg-dark: #3c3c3c;
+  --footer-bg-dark: #1e1e1e;
+  --footer-text-dark: #e0e0e0;
+  --title-color-dark: #bb86fc;
+}
+
+[data-theme="dark"] {
+  --background-color: var(--background-color-dark);
+  --wrapper-bg: var(--wrapper-bg-dark);
+  --text-color: var(--text-color-dark);
+  --input-bg: var(--input-bg-dark);
+  --input-border: var(--input-border-dark);
+  --input-focus-color: var(--input-focus-color-dark);
+  --select-bg: var(--select-bg-dark);
+  --select-text: var(--select-text-dark);
+  --button-bg: var(--button-bg-dark);
+  --button-text: var(--button-text-dark);
+  --result-bg: var(--result-bg-dark);
+  --footer-bg: var(--footer-bg-dark);
+  --footer-text: var(--footer-text-dark);
+  --title-color: var(--title-color-dark);
+}
+
+[data-theme="light"] {
+  --background-color: var(--background-color-light);
+  --wrapper-bg: var(--wrapper-bg-light);
+  --text-color: var(--text-color-light);
+  --input-bg: var(--input-bg-light);
+  --input-border: var(--input-border-light);
+  --input-focus-color: var(--input-focus-color-light);
+  --select-bg: var(--select-bg-light);
+  --select-text: var(--select-text-light);
+  --button-bg: var(--button-bg-light);
+  --button-text: var(--button-text-light);
+  --result-bg: var(--result-bg-light);
+  --footer-bg: var(--footer-bg-light);
+  --footer-text: var(--footer-text-light);
+  --title-color: var(--title-color-light);
+}
+
+body {
+  background-color: var(--background-color);
   font-family: "Poppins", sans-serif;
   border: none;
   outline: none;
+  color: var(--text-color); /* Apply text color to body */
 }
-body {
-  background-color: rgb(204, 181, 240);
-}
+/* Removed duplicate body rule */
 h1 {
   text-align: center;
   margin-top: 5px;
-  color: #6750a1;
+  color: var(--title-color); /* Use CSS variable */
 }
 .wrapper {
   width: 90%;
   max-width: 25em;
-  background-color: #ffffff;
+  background-color: var(--wrapper-bg); /* Use CSS variable */
   position: absolute;
   transform: translate(-50%, -50%);
   left: 50%;
@@ -50,18 +119,17 @@ input#amount {
   display: block;
   width: 100%;
   text-align: center;
-  border-bottom: 2px solid #23002c;
-  color: #17061f;
+  border-bottom: 2px solid var(--input-border); /* Use CSS variable */
+  color: var(--text-color); /* Use CSS variable */
   margin-bottom: 1em;
   padding: 0.5em;
-}
-#amount {
-  background-color: #fffdfd;
+  background-color: var(--input-bg); /* Use CSS variable */
   border-radius: 30px;
 }
+/* #amount specific styles already covered by input#amount */
 input#amount:focus {
-  color: #937ecc;
-  border-color: #937ecc;
+  color: var(--input-focus-color); /* Use CSS variable */
+  border-color: var(--input-focus-color); /* Use CSS variable */
 }
 .dropdowns {
   display: flex;
@@ -77,26 +145,26 @@ select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-image: url("arrow-down.svg");
+  background-image: url("arrow-down.svg"); /* Consider theming this if needed */
   background-repeat: no-repeat;
   background-position: right 15px top 50%, center;
   background-size: 20px 20px;
-  background-color: #937ecc;
-  color: #ffffff;
+  background-color: var(--select-bg); /* Use CSS variable */
+  color: var(--select-text); /* Use CSS variable */
   border-radius: 10px;
 }
 select option {
-  background-color: #ffffff;
-  color: #02002c;
+  background-color: var(--wrapper-bg); /* Use CSS variable for consistency */
+  color: var(--text-color); /* Use CSS variable */
 }
 button {
   font-size: 1.2rem;
   width: 100%;
-  background-color: #937ecc;
+  background-color: var(--button-bg); /* Use CSS variable */
   padding: 0.5em 0;
   margin-top: 0.8em;
   border-radius: 0.3em;
-  color: #ffffff;
+  color: var(--button-text); /* Use CSS variable */
   font-weight: 500;
   border-radius: 30px;
 }
@@ -104,8 +172,8 @@ button {
   font-size: 1.2em;
   text-align: center;
   margin-top: 0.8em;
-  color: #02002c;
-  background-color: #e5dbff;
+  color: var(--text-color); /* Use CSS variable */
+  background-color: var(--result-bg); /* Use CSS variable */
   padding: 0.8em 0;
   border-radius: 20px;
 }
@@ -115,13 +183,34 @@ footer {
   width: 100%;
   font-size: 10px;
   position: fixed;
-  background-color: #e5dbff;
+  background-color: var(--footer-bg); /* Use CSS variable */
   border-top-left-radius: 0.7rem;
   border-top-right-radius: 0.7rem;
-  color: #17061f;
+  color: var(--footer-text); /* Use CSS variable */
   bottom: 0;
   text-align: center;
   padding-top: 3px;
   /* text-decoration: none; */
-  border-top: 1px solid #ffffff;
+  border-top: 1px solid var(--wrapper-bg); /* Use CSS variable for border */
+}
+
+/* Styles for the theme toggle button */
+#theme-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0.6em 1.2em; /* Slightly increased padding */
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: 1px solid var(--input-border); /* Added a subtle border */
+  border-radius: 20px; /* Increased border-radius for a more rounded look */
+  cursor: pointer;
+  font-size: 0.9rem; /* Adjusted font size */
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+#theme-toggle:hover {
+  background-color: var(--input-focus-color); /* Use a hover effect consistent with other elements */
+  color: var(--wrapper-bg); /* Adjust text color on hover if needed */
 }
