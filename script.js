@@ -49,3 +49,40 @@ document
   .querySelector("#convert-button")
   .addEventListener("click", convertCurrency);
 window.addEventListener("load", convertCurrency);
+
+// Theme toggle functionality
+const themeToggle = document.getElementById("theme-toggle");
+const body = document.body;
+
+// Function to set the theme
+function setTheme(theme) {
+  body.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+  // Update toggle button text if needed (optional)
+  if (themeToggle) {
+    themeToggle.textContent = theme === "dark" ? "Light Mode" : "Dark Mode";
+  }
+}
+
+// Function to toggle the theme
+function toggleTheme() {
+  const currentTheme = localStorage.getItem("theme") || "light";
+  const newTheme = currentTheme === "light" ? "dark" : "light";
+  setTheme(newTheme);
+}
+
+// Event listener for the toggle button
+if (themeToggle) {
+  themeToggle.addEventListener("click", toggleTheme);
+}
+
+// Load saved theme on page load
+window.addEventListener("load", () => {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    setTheme(savedTheme);
+  } else {
+    // Default to light theme if no preference is saved
+    setTheme("light");
+  }
+});
